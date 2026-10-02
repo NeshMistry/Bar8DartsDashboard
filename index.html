@@ -116,7 +116,7 @@
 
         const Bar8DartsDashboard = () => {
             const [appState, setAppState] = useState('setup'); // setup, teams, match, archive
-            const [isDarkMode, setIsDarkMode] = useLocalStorage('bar8_theme', true);
+            const [isDarkMode, setIsDarkMode] = useLocalStorage('bar8_theme', false);
             
             // Persistent Data
             const [teams, setTeams] = useLocalStorage('bar8_teams', DEFAULT_TEAMS);
@@ -815,7 +815,7 @@
                                             onChange={(e) => setConfig({...config, bestOf: parseInt(e.target.value)})}
                                             className="w-full bg-slate-50 dark:bg-slate-950 border-2 border-slate-300 dark:border-slate-700 rounded-xl px-4 py-3 text-lg font-semibold text-slate-900 dark:text-white focus:outline-none focus:border-yellow-500 appearance-none transition-colors"
                                         >
-                                            {[1,3,5,7,9,11,15,21].map(num => <option key={num} value={num}>Best of {num} Legs</option>)}
+                                            {[1,3,5,7,9].map(num => <option key={num} value={num}>Best of {num} Legs</option>)}
                                         </select>
                                     </div>
                                 </div>
